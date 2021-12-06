@@ -1,0 +1,18 @@
+.gameBox{
+    max-width: 273px;
+    height: 200px;
+    transition: .5s;
+    border: 1px solid var(--background-color);
+}
+
+.gameBox:hover{
+   border-color: var(--accent);
+   opacity: 0.7;
+}
+
+@media screen and (max-width: 890px) {
+    .gameBox{
+        margin: 0 auto;
+    }
+    
+}

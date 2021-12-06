@@ -1,0 +1,26 @@
+.hero{
+    min-height: 200px;
+    background-position: center !important;
+    background-size: cover !important;
+    box-shadow: -3px 2px 169px 0px rgba(0,0,0,0.75) inset;
+-webkit-box-shadow: -3px 2px 169px 0px rgba(0,0,0,0.75) inset;
+-moz-box-shadow: -3px 2px 169px 0px rgba(0,0,0,0.75) inset;
+}
+
+.hero p{
+    font-weight: 200;
+}
+
+.hero span{
+    color: var(--accent);
+    font-weight: 900;
+}
+
+.hero a{
+    text-decoration: none;
+    color: rgb(131, 131, 131);
+}
+
+.hero a:hover{
+    color: var(--accent);
+}

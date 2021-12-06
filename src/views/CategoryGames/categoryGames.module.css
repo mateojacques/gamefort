@@ -1,0 +1,5 @@
+.gamesContainer{
+    gap: 20px; 
+    overflow: scroll;
+    max-height: auto;
+}

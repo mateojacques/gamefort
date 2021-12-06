@@ -1,38 +1,65 @@
-.App {
-  text-align: center;
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+:root{
+  --background-color: #111;
+  --primary: #0C0D0D;
+  --accent: #47E10C;
+  --alt-accent: #468023;
+  --muted: #959D9D;
+  --secondary-text: #f3f3f3;
+
+  --primary-font: 'Readex Pro', sans-serif;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+html, body, .App{
+  background-color: var(--background-color);
+opacity: 1;
+background-image: radial-gradient(circle at center center, var(--alt-accent), var(--background-color)), repeating-radial-gradient(circle at center center, var(--alt-accent), var(--alt-accent), 10px, transparent 20px, transparent 10px);
+background-blend-mode: multiply;
+  font-family: var(--primary-font);
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.App{
+  height: 100vh;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  overflow: scroll;
 }
 
-.App-link {
-  color: #61dafb;
+#main{
+  overflow: scroll;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
+::-webkit-scrollbar {
+  display: none;
+}
+
+.openMenuBtn{
+  width: 40px;
+  height: 40px;
+  border-radius: 20px;
+  border: none;
+  background: none;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 50;
+}
+
+.bi-gear-fill{
+  color: var(--accent);
+  font-size: 1.3rem;
+}
+
+.menuActive{
+  transform: translateX(0px) !important;
+}
+
+@media screen and (min-width: 1366px){
+  .openMenuBtn{
+    display: none;
   }
 }

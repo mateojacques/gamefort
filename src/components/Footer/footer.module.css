@@ -1,0 +1,14 @@
+.footer{
+    min-height: 20vh;
+    background-color: var(--background-color);
+}
+
+.footer a{
+    text-decoration: none;
+    color: var(--muted);
+    transition: .2s;
+}
+
+.footer a:hover{
+    color: var(--alt-accent)
+}

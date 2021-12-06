@@ -1,0 +1,9 @@
+.gameLauncher{
+    height: 100vh;
+}
+
+.title{
+    text-decoration: line-through;
+    text-decoration-color: var(--accent);
+    font-size: 6rem;
+}

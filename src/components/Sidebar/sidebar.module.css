@@ -1,0 +1,16 @@
+.sidebar{
+    width: 250px;
+    background-color: var(--primary);
+    z-index: 50;
+    overflow: scroll;
+}
+
+@media screen and (max-width: 1366px){
+    .sidebar{
+        position: fixed;
+        top: 0;
+        left: 0;
+        transition: 1s;
+        transform: translateX(-300px)
+    }
+}

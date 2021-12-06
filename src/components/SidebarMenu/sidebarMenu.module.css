@@ -1,0 +1,25 @@
+.menuTitle{
+    font-size: 1rem;
+    letter-spacing: .5px;
+    color: var(--muted);
+}
+
+.menuItem{
+    font-size: .9rem;
+    color: var(--secondary-text);
+    transition: .2s ease;
+    text-decoration: none;
+}
+
+.menuItem:hover{
+    color: var(--accent);
+}
+
+.active::after{
+    content: '·';
+    font-size: 2rem;
+    line-height: 22px;
+    margin-left: 10px;
+    font-weight: 900;
+    color: var(--accent);
+}
