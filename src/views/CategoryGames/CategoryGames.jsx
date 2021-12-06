@@ -1,11 +1,12 @@
 import { gamesContainer } from "./categoryGames.module.css";
 import axios from "axios";
-import { useState, useEffect } from "react";
+import { useState, useEffect, Suspense, lazy } from "react";
 import { useParams } from "react-router";
 
 import SectionTitle from "../../components/SectionTitle/SectionTitle";
-import GameBox from "../../components/GameBox/GameBox";
 import Loader from "react-loader-spinner";
+
+const GameBox = lazy(() => import("../../components/GameBox/GameBox"));
 
 const CategoryGames = () => {
   const { category } = useParams();
@@ -85,12 +86,14 @@ const CategoryGames = () => {
         <div className={`${gamesContainer} d-flex flex-wrap`}>
           {games.length > 0
             ? games.map((game, index) => (
-                <GameBox
-                  key={game.id}
-                  title={game.title}
-                  thumbnail={game.thumbnail}
-                  url={game.game_url}
-                />
+                <Suspense fallback={<p>Loading</p>}>
+                  <GameBox
+                    key={game.id}
+                    title={game.title}
+                    thumbnail={game.thumbnail}
+                    url={game.game_url}
+                  />
+                </Suspense>
               ))
             : ""}
         </div>
