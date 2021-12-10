@@ -13,10 +13,21 @@ const Featured = ({ title, query, route }) => {
   useEffect(() => {
 
     async function fetchFeaturedGames() {
-      await axios
-        .post(`https://www.freetogame.com/api/games?${query}`)
-        .then((res) => setGames(res.data))
-        .catch((err) => console.log(err));
+      const options = {
+        method: 'GET',
+        url: `https://free-to-play-games-database.p.rapidapi.com/api/games?${query}`,
+        headers: {
+          'x-rapidapi-host': 'free-to-play-games-database.p.rapidapi.com',
+          'x-rapidapi-key': 'fc8df558bbmsh507f688c01b17f7p1ad9a2jsn1bc906e5a887'
+        }
+      };
+
+      if (query) {
+        await axios
+          .request(options)
+          .then((res) => setGames(res.data))
+          .catch((err) => console.log(err));
+      }
     }
 
     fetchFeaturedGames();
