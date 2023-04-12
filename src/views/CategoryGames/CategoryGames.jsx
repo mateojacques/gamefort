@@ -1,7 +1,7 @@
-import { gamesContainer } from "./categoryGames.module.css";
 import axios from "axios";
 import { useState, useEffect, Suspense, lazy } from "react";
 import { useParams } from "react-router";
+import { Grid } from "@mui/material";
 
 import SectionTitle from "../../components/SectionTitle/SectionTitle";
 import Loader from "react-loader-spinner";
@@ -88,28 +88,27 @@ const CategoryGames = () => {
   }, [category]);
 
   return (
-    <section className="w-100 d-flex flex-column px-3 py-3">
+    <Grid container padding={3} flexDirection="column">
       <SectionTitle title={categoryTag} />
 
       {games.length > 0 ? (
-        <div className={`${gamesContainer} d-flex flex-wrap`}>
+        <Grid item container spacing={3}>
           {games.length > 0
-            ? games.map((game, index) => (
-                <Suspense fallback={<p>Loading</p>}>
+            && games.map((game, index) => (
+                <Suspense fallback={<p>Loading</p>} key={game.id}>
                   <GameBox
-                    key={game.id}
                     title={game.title}
                     thumbnail={game.thumbnail}
                     url={game.game_url}
                   />
                 </Suspense>
               ))
-            : ""}
-        </div>
+            }
+        </Grid>
       ) : (
         <Loader type="Oval" color="var(--accent)" height={32} width={32} />
       )}
-    </section>
+    </Grid>
   );
 };
 

@@ -1,14 +1,20 @@
 import { gameBox } from "./gameBox.module.css";
+import { Grid, Link, Box } from "@mui/material";
 
 const GameBox = ({ title, thumbnail, url }) => {
   return (
-    <a
-      href={url}
-      target="_blank"
-      rel="noreferrer"
-      className={`${gameBox} col-12 d-flex align-items-end px-5 py-3`}
-      style={{ background: `url(${thumbnail})`, backgroundPosition: 'center', backgroundSize: 'cover' }}
-    > </a>
+    <Grid item xs={6} md={3} lg={3} xl={2}>
+      <Link href={url} target="_blank" rel="noreferrer">
+        <Box
+          className={`${gameBox}`}
+          sx={{
+            background: `url(${thumbnail})`,
+            backgroundPosition: "center",
+            backgroundSize: "cover",
+          }}
+        />
+      </Link>
+    </Grid>
   );
 };
 

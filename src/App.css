@@ -1,35 +1,49 @@
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-:root{
+:root {
   --background-color: #111;
-  --primary: #0C0D0D;
-  --accent: #47E10C;
+  --primary: #0c0d0d;
+  --accent: #47e10c;
   --alt-accent: #468023;
-  --muted: #959D9D;
+  --muted: #959d9d;
   --secondary-text: #f3f3f3;
 
-  --primary-font: 'Readex Pro', sans-serif;
+  --primary-font: "Readex Pro", sans-serif;
 }
 
-html, body, .App{
+html,
+body,
+.App {
   background-color: var(--background-color);
-opacity: 1;
-background-image: radial-gradient(circle at center center, var(--alt-accent), var(--background-color)), repeating-radial-gradient(circle at center center, var(--alt-accent), var(--alt-accent), 10px, transparent 20px, transparent 10px);
-background-blend-mode: multiply;
+  opacity: 1;
+  background-image: radial-gradient(
+      circle at center center,
+      var(--alt-accent),
+      var(--background-color)
+    ),
+    repeating-radial-gradient(
+      circle at center center,
+      var(--alt-accent),
+      var(--alt-accent),
+      10px,
+      transparent 20px,
+      transparent 10px
+    );
+  background-blend-mode: multiply;
   font-family: var(--primary-font);
 }
 
-.App{
+.App {
   height: 100vh;
   display: flex;
   overflow: scroll;
 }
 
-#main{
+#main {
   overflow: scroll;
 }
 
@@ -37,7 +51,7 @@ background-blend-mode: multiply;
   display: none;
 }
 
-.openMenuBtn{
+.openMenuBtn {
   width: 40px;
   height: 40px;
   border-radius: 20px;
@@ -49,17 +63,17 @@ background-blend-mode: multiply;
   z-index: 50;
 }
 
-.bi-gear-fill{
+.bi-gear-fill {
   color: var(--accent);
   font-size: 1.3rem;
 }
 
-.menuActive{
+.menuActive {
   transform: translateX(0px) !important;
 }
 
-@media screen and (min-width: 1366px){
-  .openMenuBtn{
+@media screen and (min-width: 1366px) {
+  .openMenuBtn {
     display: none;
   }
 }

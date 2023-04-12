@@ -8,15 +8,3 @@
 .expandBtn:hover{
     color: var(--alt-accent) !important;
 }
-
-.gamesContainer{
-    gap: 20px; 
-    overflow: scroll;
-    max-height: auto;
-}
-
-@media screen and (min-width: 1367px) {
-    .gamesContainer{
-        flex-wrap: wrap;
-    }
-}

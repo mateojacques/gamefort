@@ -1,11 +1,12 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
-import { expandBtn, gamesContainer } from "./featured.module.css";
+import { expandBtn } from "./featured.module.css";
 
 import GameBox from "../GameBox/GameBox";
 import SectionTitle from "../SectionTitle/SectionTitle";
 import { Link } from "react-router-dom";
 import Loader from "react-loader-spinner";
+import { Grid } from "@mui/material";
 
 const Featured = ({ title, query, route }) => {
   const [games, setGames] = useState([]);
@@ -34,10 +35,10 @@ const Featured = ({ title, query, route }) => {
   }, [query]);
 
   return (
-    <section className="w-100 d-flex flex-column px-3 py-3">
+    <Grid container padding={3} flexDirection="column"> 
       <SectionTitle title={title} />
       {games.length > 0 ? (
-        <div className={`${gamesContainer} w-100 d-flex`}>
+        <Grid item container spacing={3}>
           {games.length > 0
             ? games.map((game, index) => {
                 if (index < 10) {
@@ -52,7 +53,7 @@ const Featured = ({ title, query, route }) => {
                 } else return null;
               })
             : ""}
-        </div>
+        </Grid>
       ) : (
         <Loader type="Oval" color="var(--accent)" height={32} width={32} />
       )}
@@ -60,7 +61,7 @@ const Featured = ({ title, query, route }) => {
       <Link to={route} className={`${expandBtn} ms-auto mt-3 text-light px-3`}>
         Show all
       </Link>
-    </section>
+    </Grid>
   );
 };
 
